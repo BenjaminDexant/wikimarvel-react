@@ -38,9 +38,9 @@ export default function App() {
 			<h1>Characters</h1>
 			<p>{data.baseQuery.data.count}</p>
 			<div>
-				{data.baseQuery.data.results.map((character) => {
-					return <div>{character.name}</div>;
-				})}
+				{data.baseQuery.data.results.map((character) => (
+					<div key={character.id}>{character.name}</div>
+				))}
 			</div>
 		</div>
 	);
