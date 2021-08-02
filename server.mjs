@@ -5,7 +5,7 @@ import cors from "cors";
 
 import schema from "./graphqlSchema/schema.mjs";
 
-const port = process.env.PORT || 3000;;
+const port = process.env.PORT || 5000;;
 
 const app = express();
 
