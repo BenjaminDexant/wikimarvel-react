@@ -14,10 +14,21 @@ const baseUrl = process.env.ENDPOINT;
 const apikey = process.env.PUBLIC_API_KEY;
 const hash = process.env.HASH;
 
-const getDataByURL = async () => {
+const getCharactersByURL = async () => {
 	try {
 		const response = await axios.get(
 			`${baseUrl}/v1/public/characters?ts=1&apikey=${apikey}&hash=${hash}`
+		);
+		return response.data;
+	} catch (error) {
+		console.error(error);
+	}
+};
+
+const getEventsByURL = async () => {
+	try {
+		const response = await axios.get(
+			`${baseUrl}/v1/public/events?ts=1&apikey=${apikey}&hash=${hash}`
 		);
 		return response.data;
 	} catch (error) {
@@ -36,6 +47,20 @@ const getDataByURL = async () => {
 	});
 	return newArr[4].results;
 }; */
+
+const UrlsType = new GraphQLObjectType({
+	name: "Urls",
+	fields: () => ({
+		type: {
+			type: GraphQLString,
+			resolve: (item) => item.type,
+		},
+		url: {
+			type: GraphQLString,
+			resolve: (item) => item.url,
+		},
+	}),
+});
 
 const ThumbnailType = new GraphQLObjectType({
 	name: "Image",
@@ -62,9 +87,17 @@ const ItemType = new GraphQLObjectType({
 			type: GraphQLString,
 			resolve: (item) => item.name,
 		},
+		title: {
+			type: GraphQLString,
+			resolve: (item) => item.title,
+		},
 		description: {
 			type: GraphQLString,
 			resolve: (item) => item.description,
+		},
+		urls: {
+			type: new GraphQLList(UrlsType),
+			resolve: (item) => item.urls,
 		},
 		thumbnail: {
 			type: ThumbnailType,
@@ -100,7 +133,7 @@ const AnswerType = new GraphQLObjectType({
 		},
 		data: {
 			type: DataType,
-			resolve: (obj) => obj.data,
+			resolve: (answer) => answer.data,
 		},
 	}),
 });
@@ -109,10 +142,16 @@ const QueryType = new GraphQLObjectType({
 	name: "Base",
 	description: "Base of all querries",
 	fields: () => ({
-		baseQuery: {
+		charactersList: {
 			type: AnswerType,
 			resolve: (root, args) => {
-				return getDataByURL();
+				return getCharactersByURL();
+			},
+		},
+		eventsList: {
+			type: AnswerType,
+			resolve: (root, args) => {
+				return getEventsByURL();
 			},
 		},
 	}),
