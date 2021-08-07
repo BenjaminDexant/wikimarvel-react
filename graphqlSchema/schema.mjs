@@ -11,13 +11,14 @@ import axios from "axios";
 
 const baseUrl = process.env.ENDPOINT;
 
+const ts = process.env.TS;
 const apikey = process.env.PUBLIC_API_KEY;
 const hash = process.env.HASH;
 
 const getCharactersByURL = async () => {
 	try {
 		const response = await axios.get(
-			`${baseUrl}/v1/public/characters?ts=1&apikey=${apikey}&hash=${hash}`
+			`${baseUrl}/v1/public/characters?ts=${ts}&apikey=${apikey}&hash=${hash}`
 		);
 		return response.data;
 	} catch (error) {
@@ -28,7 +29,7 @@ const getCharactersByURL = async () => {
 const getEventsByURL = async () => {
 	try {
 		const response = await axios.get(
-			`${baseUrl}/v1/public/events?ts=1&apikey=${apikey}&hash=${hash}`
+			`${baseUrl}/v1/public/events?ts=${ts}&apikey=${apikey}&hash=${hash}`
 		);
 		return response.data;
 	} catch (error) {
