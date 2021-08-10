@@ -1,0 +1,17 @@
+.count {
+    font-size: x-large;
+}
+
+.events {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.event {
+	border: solid black 1px;
+	padding: 0.5vh;
+	margin-bottom: 1vh;
+	width: 40%;
+}
