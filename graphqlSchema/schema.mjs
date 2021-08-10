@@ -26,6 +26,17 @@ const getCharactersByURL = async () => {
 	}
 };
 
+const getCharacterIDByURL = async (id) => {
+	try {
+		const response = await axios.get(
+			`${baseUrl}/v1/public/characters/${id}?ts=${ts}&apikey=${apikey}&hash=${hash}`
+		);
+		return response.data;
+	} catch (error) {
+		console.error(error);
+	}
+};
+
 const getEventsByURL = async () => {
 	try {
 		const response = await axios.get(
@@ -153,6 +164,15 @@ const QueryType = new GraphQLObjectType({
 			type: AnswerType,
 			resolve: (root, args) => {
 				return getEventsByURL();
+			},
+		},
+		characterID: {
+			type: AnswerType,
+			args: {
+				id: { type: GraphQLString },
+			},
+			resolve: (root, args) => {
+				return getCharacterIDByURL(args.id);
 			},
 		},
 	}),
