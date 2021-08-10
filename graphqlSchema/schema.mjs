@@ -59,18 +59,6 @@ const getEventsByURL = async () => {
 	}
 };
 
-// Function created to do some test, might be usefull later //!\\ TO DELETE IF NOT
-/* onst getResultsArr = (results) => {
-	if (Array.isArray(results)) {
-		return results;
-	}
-	let newArr = [];
-	Object.entries(results).forEach(([key, value]) => {
-		newArr.push({ [key]: value });
-	});
-	return newArr[4].results;
-}; */
-
 const UrlsType = new GraphQLObjectType({
 	name: "Urls",
 	fields: () => ({
