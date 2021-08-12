@@ -13,7 +13,7 @@ const Events = () => {
 
 	return (
 		<div>
-			<h1>Events List</h1>
+			<h1 className="title">Events List</h1>
 			<p className="count">{data.eventsList.data.count} events</p>
 			<div className="events">
 				{data.eventsList.data.results.map(({id, title, thumbnail}) => (

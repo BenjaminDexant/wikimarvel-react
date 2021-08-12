@@ -3,7 +3,7 @@ import { useQuery } from "@apollo/client";
 
 import { getCharactersName } from "../../queries/character";
 
-//import "./displayCharacters.css";
+import "./characters.css";
 
 const Events = ({ name }) => {
 	const { data, loading, error } = useQuery(getCharactersName, {
