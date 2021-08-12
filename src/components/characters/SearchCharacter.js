@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 
+import DisplayCharacters from "./DisplayCharacters";
+
 //import "./searchCharacter.css";
 
 const SearchCharacter = () => {
@@ -19,7 +21,7 @@ const SearchCharacter = () => {
 				{errors.characterName && <p>Field is required.</p>}
 				<input type="submit" />
 			</form>
-			<h1>{character}</h1>
+			{character ? <DisplayCharacters name={character} /> : null}
 		</div>
 	);
 };
