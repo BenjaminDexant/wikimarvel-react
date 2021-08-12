@@ -16,13 +16,13 @@ const Events = () => {
 			<h1>Events List</h1>
 			<p className="count">{data.eventsList.data.count} events</p>
 			<div className="events">
-				{data.eventsList.data.results.map((event) => (
-					<div key={event.id} className="event">
+				{data.eventsList.data.results.map(({id, title, thumbnail}) => (
+					<div key={id} className="event">
 						<img
-							src={event.thumbnail.path + "/portrait_small." + event.thumbnail.extension}
+							src={thumbnail.path + "/portrait_small." + thumbnail.extension}
 							alt="event"
 						/>
-						{event.title}
+						{title}
 					</div>
 				))}
 			</div>
