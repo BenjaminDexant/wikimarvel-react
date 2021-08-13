@@ -1,9 +1,5 @@
-function Home() {
-    return (
-        <div>
-            My home component
-        </div>
-    )
-}
+const Home = () => {
+	return <div>My home component</div>;
+};
 
-export default Home
+export default Home;

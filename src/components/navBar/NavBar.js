@@ -1,8 +1,10 @@
 import { Link } from "react-scroll";
 
-function NavBar() {
+import "./navBar.css";
+
+const NavBar = () => {
 	return (
-		<ul style={{ display: "flex", listStyle: "none", justifyContent: "space-around" }}>
+		<ul className="list">
 			<li>
 				<Link activeClass="active" to="home" spy={true} smooth={true}>
 					Home
@@ -25,6 +27,6 @@ function NavBar() {
 			</li>
 		</ul>
 	);
-}
+};
 
 export default NavBar;
