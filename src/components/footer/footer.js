@@ -1,4 +1,4 @@
-function footer() {
+function Footer() {
     return (
         <div>
             Data provided by Marvel. © 2014 Marvel
@@ -6,4 +6,4 @@ function footer() {
     )
 }
 
-export default footer
+export default Footer
