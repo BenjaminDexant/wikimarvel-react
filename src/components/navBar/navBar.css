@@ -1,5 +1,20 @@
 .list {
+	height: 4vh;
 	display: flex;
 	list-style: none;
 	justify-content: space-around;
+	align-items: center;
+	background-color: red;
+    padding: 0%;
+}
+
+.element {
+	margin-left: 0px;
+	color: white;
+	font-size: large;
+	font-weight: bold;
+}
+
+.element:hover {
+	color: black;
 }
