@@ -1,6 +1,6 @@
 function Footer() {
     return (
-        <div>
+        <div data-testid="copyright">
             Data provided by Marvel. © 2014 Marvel
         </div>
     )
