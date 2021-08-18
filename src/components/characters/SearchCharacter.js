@@ -16,7 +16,7 @@ const SearchCharacter = () => {
 
 	return (
 		<div>
-      <h1 className="title">Look for a character :</h1>
+			<h1 className="title" data-testid="title">Look for a character :</h1>
 			<form onSubmit={handleSubmit(onSubmit)}>
 				<input {...register("characterName", { required: true })} />
 				{errors.characterName && <p>Field is required.</p>}
