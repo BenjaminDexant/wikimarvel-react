@@ -15,6 +15,7 @@ exports[`The navBar is made of an ul with four li elements Home Search Events an
   </li>
   <li
     className="element"
+    data-testid="element"
   >
     <a
       onClick={[Function]}

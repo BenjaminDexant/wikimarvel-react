@@ -10,7 +10,7 @@ const NavBar = () => {
 					Home
 				</Link>
 			</li>
-			<li className="element">
+			<li className="element" data-testid="element">
 				<Link to="searchCharacter" spy={true} smooth={true} isDynamic={true} offset={-25}>
 					Search
 				</Link>
