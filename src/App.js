@@ -6,10 +6,12 @@ import SearchCharacter from "./components/characters/SearchCharacter";
 import Events from "./components/events/Events";
 import Footer from "./components/footer/Footer";
 
+import "./App.css";
+
 const App = () => {
 	return (
-		<div>
-			<div>
+		<div className="app">
+			<div className="navBar">
 				<NavBar />
 			</div>
 			<div id="home">
