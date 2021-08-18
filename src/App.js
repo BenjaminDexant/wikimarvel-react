@@ -19,10 +19,17 @@ const App = () => {
 			</div>
 
 			<div id="searchCharacter">
+				<h1 className="title" data-testid="searchTitle">
+					Look for a character :
+				</h1>
 				<SearchCharacter />
 			</div>
 
 			<div id="events">
+				<h1 className="title" data-testid="eventsTitle">
+					Events list :
+				</h1>
+
 				<Events />
 			</div>
 

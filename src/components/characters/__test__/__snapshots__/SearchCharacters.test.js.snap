@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`The form is displayed correctly 1`] = `
+<div>
+  <form
+    onSubmit={[Function]}
+  >
+    <input
+      data-testid="input"
+      name="characterName"
+      onBlur={[Function]}
+      onChange={[Function]}
+    />
+    <input
+      data-testid="submit"
+      type="submit"
+      value="Search"
+    />
+  </form>
+</div>
+`;

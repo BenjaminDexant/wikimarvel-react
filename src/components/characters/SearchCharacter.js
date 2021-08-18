@@ -16,11 +16,10 @@ const SearchCharacter = () => {
 
 	return (
 		<div>
-			<h1 className="title" data-testid="title">Look for a character :</h1>
 			<form onSubmit={handleSubmit(onSubmit)}>
-				<input {...register("characterName", { required: true })} />
+				<input data-testid="input" {...register("characterName", { required: true })} />
 				{errors.characterName && <p>Field is required.</p>}
-				<input type="submit" value="Search" />
+				<input data-testid="submit" type="submit" value="Search" />
 			</form>
 			{character ? <DisplayCharacters name={character} /> : null}
 		</div>
