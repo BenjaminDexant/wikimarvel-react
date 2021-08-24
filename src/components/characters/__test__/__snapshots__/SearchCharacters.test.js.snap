@@ -5,17 +5,25 @@ exports[`The form is displayed correctly 1`] = `
   <form
     onSubmit={[Function]}
   >
+    <label
+      htmlFor="characterName"
+    >
+      Character name :
+    </label>
     <input
-      data-testid="input"
+      data-testid="characterName"
+      id="characterName"
       name="characterName"
       onBlur={[Function]}
       onChange={[Function]}
+      type="characterName"
     />
-    <input
-      data-testid="submit"
+    <button
+      data-testid="submitButton"
       type="submit"
-      value="Search"
-    />
+    >
+      Search
+    </button>
   </form>
 </div>
 `;
