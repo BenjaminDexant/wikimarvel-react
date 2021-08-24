@@ -15,7 +15,9 @@ const Events = ({ name }) => {
 
 	return (
 		<div>
-			<p className="count">{data.charactersName.data.count} characters matching.</p>
+			<p className="count">
+				{data.charactersName.data.count} answers related to : {name}
+			</p>
 			<div className="characters">
 				{data.charactersName.data.results.map(({ id, name, thumbnail }) => (
 					<div key={id} className="character">
