@@ -12,9 +12,6 @@ const Events = ({ name }) => {
 		variables: { name },
 	});
 
-	let dataLength = data.charactersName.data.results.length;
-	console.log(dataLength);
-
 	const [visibleCharacter1, setVisibleCharacter1] = useState(1);
 	const [visibleCharacter2, setVisibleCharacter2] = useState(2);
 	const [visibleCharacter3, setVisibleCharacter3] = useState(3);
@@ -55,15 +52,16 @@ const Events = ({ name }) => {
 	const displayYes = "inline";
 	const displayNo = "none";
 
+	if (loading) return "Loading...";
+	if (error) return <pre>{error.message}</pre>;
+
 	const prevStyle = {
 		display: `${blurCharacter1 !== 0 ? displayYes : displayNo}`,
 	};
 	const nextStyle = {
-		display: `${blurCharacter2 !== dataLength ? displayYes : displayNo}`,
+		display: `${blurCharacter2 !== data.charactersName.data.results.length ? displayYes : displayNo}`,
 	};
 
-	if (loading) return "Loading...";
-	if (error) return <pre>{error.message}</pre>;
 
 	return (
 		<div className="container">
