@@ -12,6 +12,7 @@ const Events = ({ name }) => {
 		variables: { name },
 	});
 
+	const [prevButtonVisible, setPrevButtonVisible] = useState(true);
 	const [visibleCharacter1, setVisibleCharacter1] = useState(1);
 	const [visibleCharacter2, setVisibleCharacter2] = useState(2);
 	const [visibleCharacter3, setVisibleCharacter3] = useState(3);
@@ -49,6 +50,13 @@ const Events = ({ name }) => {
 		setBlurCharacter2(blurCharacter2 + 1);
 	};
 
+	const displayYes = "inline";
+	const displayNo = "none";
+
+	const style = {
+		display: `${blurCharacter1 !== 0 ? displayYes : displayNo}`,
+	};
+
 	if (loading) return "Loading...";
 	if (error) return <pre>{error.message}</pre>;
 
@@ -58,7 +66,7 @@ const Events = ({ name }) => {
 				{data.charactersName.data.count} answers related to : "{name}"
 			</p>
 			<div className="wrapper">
-				<div className="prev" onClick={() => prevCharacter()}>
+				<div style={style} className="prev" onClick={() => prevCharacter()}>
 					&#10094;
 				</div>
 				<div className="characters-container">
