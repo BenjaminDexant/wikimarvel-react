@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useQuery } from "@apollo/client";
 
 import { getCharactersName } from "../../queries/character";
+
+import Character from "./Character";
 
 import "./characters.css";
 
@@ -9,6 +11,43 @@ const Events = ({ name }) => {
 	const { data, loading, error } = useQuery(getCharactersName, {
 		variables: { name },
 	});
+
+	const [visibleCharacter1, setVisibleCharacter1] = useState(1);
+	const [visibleCharacter2, setVisibleCharacter2] = useState(2);
+	const [visibleCharacter3, setVisibleCharacter3] = useState(3);
+	const [blurCharacter1, setBlurCharacter1] = useState(0);
+	const [blurCharacter2, setBlurCharacter2] = useState(4);
+
+	useEffect(() => {
+		setVisibleCharacter1(1);
+		setVisibleCharacter2(2);
+		setVisibleCharacter3(3);
+		setBlurCharacter1(0);
+		setBlurCharacter2(4);
+		return () => {
+			setVisibleCharacter1(1);
+			setVisibleCharacter2(2);
+			setVisibleCharacter3(3);
+			setBlurCharacter1(0);
+			setBlurCharacter2(4);
+		};
+	}, [data]);
+
+	const prevCharacter = () => {
+		setVisibleCharacter1(visibleCharacter1 - 1);
+		setVisibleCharacter2(visibleCharacter2 - 1);
+		setVisibleCharacter3(visibleCharacter3 - 1);
+		setBlurCharacter1(blurCharacter1 - 1);
+		setBlurCharacter2(blurCharacter2 - 1);
+	};
+
+	const nextCharacter = () => {
+		setVisibleCharacter1(visibleCharacter1 + 1);
+		setVisibleCharacter2(visibleCharacter2 + 1);
+		setVisibleCharacter3(visibleCharacter3 + 1);
+		setBlurCharacter1(blurCharacter1 + 1);
+		setBlurCharacter2(blurCharacter2 + 1);
+	};
 
 	if (loading) return "Loading...";
 	if (error) return <pre>{error.message}</pre>;
@@ -19,20 +58,27 @@ const Events = ({ name }) => {
 				{data.charactersName.data.count} answers related to : "{name}"
 			</p>
 			<div className="wrapper">
-				<div className="prev" >&#10094;</div>
+				<div className="prev" onClick={() => prevCharacter()}>
+					&#10094;
+				</div>
 				<div className="characters-container">
-					{data.charactersName.data.results.map(({ id, name, thumbnail }) => (
-						<div key={id} className="character">
-							<img
-								className="character-image"
-								src={thumbnail.path + "/portrait_small." + thumbnail.extension}
-								alt="character"
-							/>
-							<div className="character-name">{name}</div>
-						</div>
+					{data.charactersName.data.results.map(({ id, name, thumbnail }, index) => (
+						<Character
+							id={id}
+							name={name}
+							thumbnail={thumbnail}
+							index={index}
+							visibleCharacter1={visibleCharacter1}
+							visibleCharacter2={visibleCharacter2}
+							visibleCharacter3={visibleCharacter3}
+							blurCharacter1={blurCharacter1}
+							blurCharacter2={blurCharacter2}
+						/>
 					))}
 				</div>
-				<div className="next">&#10095;</div>
+				<div className="next" onClick={() => nextCharacter()}>
+					&#10095;
+				</div>
 			</div>
 		</div>
 	);

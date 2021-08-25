@@ -19,7 +19,7 @@ const SearchCharacter = () => {
 	};
 
 	return (
-		<div>
+		<div className="container">
 			<form onSubmit={handleSubmit(onSubmit)}>
 				<label htmlFor="characterName">Character name :</label>
 				<input
@@ -42,11 +42,7 @@ const SearchCharacter = () => {
 					Search
 				</button>
 			</form>
-			{character ? (
-				<div>
-					<DisplayCharacters name={character} />
-				</div>
-			) : null}
+			{character ? <DisplayCharacters name={character} /> : null}
 		</div>
 	);
 };

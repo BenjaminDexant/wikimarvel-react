@@ -1,3 +1,18 @@
+body {
+  background: whitesmoke;
+}
+
+.app {
+  display: flex;
+	flex-direction: column;
+	justify-items: center;
+}
+
+.title {
+  margin-left: 1vh;
+  font-size: larger;
+}
+
 .navBar {
   position: -webkit-sticky;
 	position: sticky;
