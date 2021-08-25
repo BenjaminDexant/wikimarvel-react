@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`The navBar is made of an ul with four li elements Home Search Events and Footer 1`] = `
+<ul
+  className="list"
+>
+  <li
+    className="element"
+  >
+    <a
+      onClick={[Function]}
+    >
+      Home
+    </a>
+  </li>
+  <li
+    className="element"
+    data-testid="element"
+  >
+    <a
+      onClick={[Function]}
+    >
+      Search
+    </a>
+  </li>
+  <li
+    className="element"
+  >
+    <a
+      onClick={[Function]}
+    >
+      Events
+    </a>
+  </li>
+  <li
+    className="element"
+  >
+    <a
+      onClick={[Function]}
+    >
+      Footer
+    </a>
+  </li>
+</ul>
+`;

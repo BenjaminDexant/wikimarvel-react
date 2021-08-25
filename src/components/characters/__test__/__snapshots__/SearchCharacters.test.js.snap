@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`The form is displayed correctly 1`] = `
+<div
+  className="container"
+>
+  <form
+    onSubmit={[Function]}
+  >
+    <label
+      htmlFor="characterName"
+    >
+      Character name :
+    </label>
+    <input
+      data-testid="characterName"
+      id="characterName"
+      name="characterName"
+      onBlur={[Function]}
+      onChange={[Function]}
+      type="characterName"
+    />
+    <button
+      data-testid="submitButton"
+      type="submit"
+    >
+      Search
+    </button>
+  </form>
+</div>
+`;
