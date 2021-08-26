@@ -20,3 +20,24 @@ export const getCharactersName = gql`
 		}
 	}
 `;
+
+export const getCharacterId = gql`
+	query getCharacterID($showDetails: String) {
+		characterID(id: $showDetails) {
+			code
+			status
+			data {
+				count
+				results {
+					id
+					name
+					description
+					thumbnail {
+						path
+						extension
+					}
+				}
+			}
+		}
+	}
+`;
