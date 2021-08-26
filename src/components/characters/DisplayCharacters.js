@@ -59,9 +59,10 @@ const Events = ({ name }) => {
 		display: `${blurCharacter1 !== 0 ? displayYes : displayNo}`,
 	};
 	const nextStyle = {
-		display: `${blurCharacter2 !== data.charactersName.data.results.length ? displayYes : displayNo}`,
+		display: `${
+			blurCharacter2 !== data.charactersName.data.results.length ? displayYes : displayNo
+		}`,
 	};
-
 
 	return (
 		<div className="container">
@@ -75,6 +76,7 @@ const Events = ({ name }) => {
 				<div className="characters-container">
 					{data.charactersName.data.results.map(({ id, name, thumbnail }, index) => (
 						<Character
+							key={id}
 							id={id}
 							name={name}
 							thumbnail={thumbnail}
