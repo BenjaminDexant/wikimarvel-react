@@ -10,6 +10,7 @@ const Character = ({
 	visibleCharacter3,
 	blurCharacter1,
 	blurCharacter2,
+	setShowDetails,
 }) => {
 	const [position, setPosition] = useState(0);
 	const [visible, setVisible] = useState(false);
@@ -69,7 +70,7 @@ const Character = ({
 	};
 
 	return (
-		<div style={style} key={id} className="character">
+		<div style={style} key={id} className="character" onClick={() => setShowDetails(id)}>
 			<img
 				className="character-image"
 				src={thumbnail.path + "/portrait_small." + thumbnail.extension}

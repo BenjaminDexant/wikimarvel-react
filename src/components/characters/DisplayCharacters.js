@@ -6,6 +6,7 @@ import { getCharactersName } from "../../queries/character";
 import Character from "./Character";
 
 import "./characters.css";
+import CharacterDetails from "./CharacterDetails";
 
 const Events = ({ name }) => {
 	const { data, loading, error } = useQuery(getCharactersName, {
@@ -52,6 +53,8 @@ const Events = ({ name }) => {
 	const displayYes = "inline";
 	const displayNo = "none";
 
+	const [showDetails, setShowDetails] = useState(null);
+
 	if (loading) return "Loading...";
 	if (error) return <pre>{error.message}</pre>;
 
@@ -86,12 +89,19 @@ const Events = ({ name }) => {
 							visibleCharacter3={visibleCharacter3}
 							blurCharacter1={blurCharacter1}
 							blurCharacter2={blurCharacter2}
+							showDetails={showDetails}
+							setShowDetails={setShowDetails}
 						/>
 					))}
 				</div>
 				<div style={nextStyle} className="next" onClick={() => nextCharacter()}>
 					&#10095;
 				</div>
+			</div>
+			<div className="details">
+				{showDetails ? (
+					<CharacterDetails showDetails={showDetails} setShowDetails={setShowDetails} />
+				) : null}
 			</div>
 		</div>
 	);
