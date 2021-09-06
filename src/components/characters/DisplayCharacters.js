@@ -68,15 +68,15 @@ const Events = ({ name }) => {
 	};
 
 	return (
-		<div className="container">
+		<div className="character-container">
 			<p className="count">
 				{data.charactersName.data.count} answers related to : "{name}"
 			</p>
-			<div className="wrapper">
+			<div className="character-wrapper">
 				<div style={prevStyle} className="prev" onClick={() => prevCharacter()}>
 					&#10094;
 				</div>
-				<div className="characters-container">
+				<div className="characters">
 					{data.charactersName.data.results.map(({ id, name, thumbnail }, index) => (
 						<Character
 							key={id}

@@ -61,9 +61,9 @@ const Events = () => {
 	};
 
 	return (
-		<div className="container">
-			<p className="count">{data.eventsList.data.count} events bond to the Avengers</p>
-			<div className="wrapper">
+		<div className="event-container">
+			<p className="count">{data.eventsList.data.count} events related to the Avengers</p>
+			<div className="events-wrapper">
 				<div style={prevStyle} className="prev" onClick={() => prevEvent()}>
 					&#10094;
 				</div>

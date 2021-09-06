@@ -62,13 +62,13 @@ const Event = ({
 	};
 
 	return (
-		<div style={style} key={id} className="Event">
+		<div style={style} key={id} className="event-container">
 			<img
 				className="Event-image"
 				src={thumbnail.path + "/portrait_small." + thumbnail.extension}
 				alt="Event"
 			/>
-			<div className="Event-name">{title}</div>
+			<div className="event-name">{title}</div>
 		</div>
 	);
 };

@@ -1,4 +1,4 @@
-.container {
+.character-container {
 	text-align: center;
 	display: flex;
 	flex-direction: column;
@@ -10,15 +10,15 @@
 	font-size: medium;
 }
 
-.wrapper {
-	height: 100px;
+.character-wrapper {
+	height: 150px;
 	width: 50vh;
 	position: relative;
 	top: 0px;
 	left: 0px;
 }
 
-.characters-container {
+.characters {
 	position: relative;
 }
 
@@ -45,7 +45,7 @@
 .next {
 	position: absolute;
 	top: 0;
-	z-index: 1;
+	z-index: 2;
 	height: 70%;
 	padding: 2vh 5%;
 	border-radius: 5%;
