@@ -18,6 +18,8 @@ const SearchCharacter = () => {
 		reset();
 	};
 
+	const [showDetails, setShowDetails] = useState(null);
+
 	return (
 		<div className="character-container">
 			<form onSubmit={handleSubmit(onSubmit)}>
@@ -38,11 +40,17 @@ const SearchCharacter = () => {
 					<span role="alert">{errors.characterName.message}</span>
 				)}
 				{errors.characterName?.type === "required" && <span role="alert">Field is required</span>}
-				<button data-testid="submitButton" type="submit">
+				<button onClick={() => setShowDetails(null)} data-testid="submitButton" type="submit">
 					Search
 				</button>
 			</form>
-			{character ? <DisplayCharacters name={character} /> : null}
+			{character ? (
+				<DisplayCharacters
+					name={character}
+					showDetails={showDetails}
+					setShowDetails={setShowDetails}
+				/>
+			) : null}
 		</div>
 	);
 };

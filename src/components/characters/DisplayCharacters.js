@@ -8,7 +8,7 @@ import Character from "./Character";
 import "./characters.css";
 import CharacterDetails from "./CharacterDetails";
 
-const Events = ({ name }) => {
+const Events = ({ name, showDetails, setShowDetails }) => {
 	const { data, loading, error } = useQuery(getCharactersName, {
 		variables: { name },
 	});
@@ -52,8 +52,6 @@ const Events = ({ name }) => {
 
 	const displayYes = "inline";
 	const displayNo = "none";
-
-	const [showDetails, setShowDetails] = useState(null);
 
 	if (loading) return "Loading...";
 	if (error) return <pre>{error.message}</pre>;
