@@ -71,16 +71,22 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	padding: 1vh;
 	margin: 0% 15vw;
-	border: 1px solid gray;
 }
 
 .character-details-container {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	border: 1px solid gray;
+	padding: 1vh;
 	width: 100%;
+}
+
+.character-details-closeBtn {
+	align-self: flex-end;
+	background-color: red;
+	border-radius: 10%;
 }
 
 .character-details-image {

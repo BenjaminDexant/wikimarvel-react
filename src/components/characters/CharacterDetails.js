@@ -13,6 +13,7 @@ const CharacterDetails = ({ showDetails, setShowDetails }) => {
 
 	return (
 		<div className="character-details-container">
+			<button className="character-details-closeBtn" onClick={() => setShowDetails(null)}>Close</button>
 			<img
 				className="character-details-image"
 				src={
