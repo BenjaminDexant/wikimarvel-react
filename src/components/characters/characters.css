@@ -2,7 +2,7 @@
 	text-align: center;
 	display: flex;
 	flex-direction: column;
-	justify-content: space-around;
+	justify-content: center;
 	align-items: center;
 }
 
@@ -65,4 +65,35 @@
 	color: white;
 	height: 70%;
 	background-color: rgba(0, 0, 0, 0.8);
+}
+
+.details {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 1vh;
+	margin: 0% 15vw;
+	border: 1px solid gray;
+}
+
+.character-details-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+}
+
+.character-details-image {
+	height: 100px;
+	width: 100px;
+}
+
+.character-details-name {
+	font-size: large;
+	font-weight: bold;
+}
+
+.character-details-description {
+	font-size: x-small;
+	word-break: break-all;
 }

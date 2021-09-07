@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { useQuery } from "@apollo/client";
 
 import { getCharacterId } from "../../queries/character";
@@ -17,7 +17,7 @@ const CharacterDetails = ({ showDetails, setShowDetails }) => {
 				className="character-details-image"
 				src={
 					data.characterID.data.results[0].thumbnail.path +
-					"/portrait_small." +
+					"/standard_medium." +
 					data.characterID.data.results[0].thumbnail.extension
 				}
 				alt="character"
