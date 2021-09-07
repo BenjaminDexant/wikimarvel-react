@@ -15,7 +15,8 @@ Back part is deployed with Heroku
  - Front End made with React and Apollo
  - Back End made with Node.js & Express & GraphQL
  
-# To Do
+# Infos
 
+The project is made with the mobile first approach. I'll have to upgrade to desktop view.
 App made to learn the GraphQL query language and Jest the testing Framework
 Next step will be to build pretty much the same app but using Next.js and Typescript
